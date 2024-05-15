@@ -1,5 +1,4 @@
-GDLauncher-*.deb
-gdlauncher-bin-*-x86_64.pkg.tar.zst
-.directory
-pkg
-src
+*
+!.gitignore
+!.SRCINFO
+!PKGBUILD
