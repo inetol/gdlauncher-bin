@@ -3,7 +3,7 @@
 # Contributor: Cranky Supertoon <crankysupertoon@gmail.com>
 
 pkgname=gdlauncher-bin
-pkgver=2.0.9
+pkgver=2.0.20
 pkgrel=1
 pkgdesc='A simple, yet powerful Minecraft custom launcher with a strong focus on the user experience (binary release)'
 arch=('x86_64')
@@ -13,7 +13,7 @@ provides=("${pkgname//-bin}")
 conflicts=("${pkgname//-bin}")
 source=("$pkgname-$pkgver.AppImage::https://cdn-raw.gdl.gg/launcher/GDLauncher__${pkgver}__linux__x64.AppImage"
         "LICENSE::https://raw.githubusercontent.com/gorilla-devs/GDLauncher-Carbon/develop/LICENSE")
-b2sums=('c204a57f936b0aacf3d63f5df47b77e33c29ee7ad19d9a92a14024eee08187fe701356f3ded6445f09da9ed2f69cb1ff32f5f03373fcd87b5ec886bae3f55738'
+b2sums=('773af34aeeb2f7a36ee4356661529b218d10ded1e37ffc9907f274e06d9e99446f1417b0becc3d1ef140728824896e291cbb83f63f5c35db685c97f55c059755'
         '93aed8a6736b73bc8ce08847d9dc895c0e14310125811ea43fbfe9977faa186c4d8f8ffcf88a2a17ab8ae34ab82e1ffbe84e1c590456d4bef46e552b5f80cee7')
 
 prepare() {
@@ -36,7 +36,7 @@ prepare() {
     find . -type d -exec chmod 755 {} \;
     find . -type f -exec chmod 644 {} \;
     chmod 755 {chrome-sandbox,chrome_crashpad_handler,"${pkgname//-bin}",*.so,*.so.*}
-    chmod 755 resources/{"app.asar.unpacked/node_modules/@sentry/cli-linux-x64/bin/sentry-cli",binaries/core_module,app.asar}
+    chmod 755 resources/{binaries/core_module,app.asar}
 }
 
 package() {
